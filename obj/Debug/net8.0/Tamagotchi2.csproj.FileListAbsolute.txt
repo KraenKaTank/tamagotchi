@@ -12,3 +12,4 @@ C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0
 C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.pdb
 C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.genruntimeconfig.cache
 C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\ref\Tamagotchi2.dll
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.sourcelink.json

@@ -23,18 +23,31 @@ namespace Tamagotchi
         private DateTime dateTime;
         private TimeSpan timeSpan;
 
+        public string Name { get => name; set => name = value; }
+        public int Hunger { get => hunger; set => hunger = value; }
+        public int Sleepy { get => sleepy; set => sleepy = value; }
+        public int Bored { get => bored; set => bored = value; }
+        public string Age { get => age; set => age = value; }
+        public int Health { get => health; set => health = value; }
+        public int Hygiene { get => hygiene; set => hygiene = value; }
+        public int Social { get => social; set => social = value; }
+        public int Harndrang { get => harndrang; set => harndrang = value; }
+        public DateTime Born { get => born; set => born = value; }
+        public DateTime DateTime { get => dateTime; set => dateTime = value; }
+        public TimeSpan TimeSpan { get => timeSpan; set => timeSpan = value; }
+
         public Pet(string name)
         {
             this.name = name;
-            this.hunger = 70;
-            this.sleepy = 70;
-            this.bored = 70;
-            this.age = "0";
-            this.born = DateTime.Now;
-            this.health = 70;
-            this.hygiene = 70;
-            this.social = 70;
-            this.harndrang = 70;
+            hunger = 70;
+            sleepy = 70;
+            bored = 70;
+            age = "0";
+            born = DateTime.Now;
+            health = 70;
+            hygiene = 70;
+            social = 70;
+            harndrang = 70;
         }
 
         public void Sleep()
@@ -42,47 +55,47 @@ namespace Tamagotchi
             Random random = new Random();
             if( random.Next(10) < 3)
             {
-                this.sleepy += 10;
+                sleepy += 10;
                 Console.WriteLine("Didnt sleep well");
             }
-            this.sleepy = 100;
+            System.Console.WriteLine("z Z");
+            sleepy = 100;
         }
         public void Feed()
         {
             Random random = new Random();
             if( random.Next(10) < 2)
             {
-                this.hunger -= 10;
+                hunger -= 10;
                 Console.WriteLine("Foood was spoiled");
             }
-            this.hunger += 30;
+            hunger += 30;
 
         }
         public void Play()
         {
             TimeSpan fiveYears = TimeSpan.FromDays(365 * 5);
-            if(DateTime.Now - this.born > fiveYears)
+            if(DateTime.Now - born > fiveYears)
             {
-                this.bored += 15;
+                bored += 15;
             }
-            this.bored += 30;
+            bored += 30;
         }
-        public String Age()
+        public void Aged()
         {
 
-            timeSpan = DateTime.Now - this.born;
-            this.age = timeSpan.ToString();
+            timeSpan = DateTime.Now - born;
+            age = timeSpan.ToString();
 
-            if(DateTime.Now.Day == this.born.Day)
+            if(DateTime.Now.Day == born.Day)
             {
                 Console.WriteLine("Wee making Party, cause it's your birtday.");
             }
-            return this.age;
         }
         
         public Boolean Sick()
         {
-            if(this.hygiene <20)
+            if(hygiene <20)
                 return true;
             return false;
         }
