@@ -1,0 +1,14 @@
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\bin\Debug\net8.0\Tamagotchi2.exe
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\bin\Debug\net8.0\Tamagotchi2.deps.json
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\bin\Debug\net8.0\Tamagotchi2.runtimeconfig.json
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\bin\Debug\net8.0\Tamagotchi2.dll
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\bin\Debug\net8.0\Tamagotchi2.pdb
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.AssemblyInfoInputs.cache
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.AssemblyInfo.cs
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.csproj.CoreCompileInputs.cache
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.dll
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\refint\Tamagotchi2.dll
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.pdb
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\Tamagotchi2.genruntimeconfig.cache
+C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi2\obj\Debug\net8.0\ref\Tamagotchi2.dll
