@@ -1,15 +1,22 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 using Tamagotchi;
 
 
 
+TimeSpan timeSpan; 
 
 Pet pet = new Pet("Pascal");
 DateTime currentTime = DateTime.Now;
+
+
+
+while(Console.ReadLine() != "exit"){
 Timer timer = new Timer(TamagotchiEgg, null, 0, 2000);
+if()
 
 
-while(Console.ReadLine() != )
+}
 
 Console.ReadLine();
 

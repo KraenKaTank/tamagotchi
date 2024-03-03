@@ -23,18 +23,6 @@ namespace Tamagotchi
         private DateTime dateTime;
         private TimeSpan timeSpan;
 
-        public string Name { get => name; set => name = value; }
-        public int Hunger { get => hunger; set => hunger = value; }
-        public int Sleepy { get => sleepy; set => sleepy = value; }
-        public int Bored { get => bored; set => bored = value; }
-        public string Age { get => age; set => age = value; }
-        public int Health { get => health; set => health = value; }
-        public int Hygiene { get => hygiene; set => hygiene = value; }
-        public int Social { get => social; set => social = value; }
-        public int Harndrang { get => harndrang; set => harndrang = value; }
-        public DateTime Born { get => born; set => born = value; }
-        public DateTime DateTime { get => dateTime; set => dateTime = value; }
-        public TimeSpan TimeSpan { get => timeSpan; set => timeSpan = value; }
 
         public Pet(string name)
         {
@@ -56,9 +44,9 @@ namespace Tamagotchi
             if( random.Next(10) < 3)
             {
                 sleepy += 10;
-                Console.WriteLine("Didnt sleep well");
+                Console.WriteLine("Didn't sleep well");
             }
-            System.Console.WriteLine("z Z");
+            Console.WriteLine("z Z");
             sleepy = 100;
         }
         public void Feed()
@@ -67,15 +55,15 @@ namespace Tamagotchi
             if( random.Next(10) < 2)
             {
                 hunger -= 10;
-                Console.WriteLine("Foood was spoiled");
+                Console.WriteLine("Food was spoiled");
             }
             hunger += 30;
 
         }
         public void Play()
         {
-            TimeSpan fiveYears = TimeSpan.FromDays(365 * 5);
-            if(DateTime.Now - born > fiveYears)
+            timeSpan = TimeSpan.FromDays(365 * 5);
+            if(DateTime.Now - born > timeSpan)
             {
                 bored += 15;
             }
@@ -99,6 +87,18 @@ namespace Tamagotchi
                 return true;
             return false;
         }
+        
+        public string Name { get => name; set => name = value; }
+        public int Hunger { get => hunger; set => hunger = value; }
+        public int Sleepy { get => sleepy; set => sleepy = value; }
+        public int Bored { get => bored; set => bored = value; }
+        public string Age { get => age; set => age = value; }
+        public int Health { get => health; set => health = value; }
+        public int Hygiene { get => hygiene; set => hygiene = value; }
+        public int Social { get => social; set => social = value; }
+        public int Harndrang { get => harndrang; set => harndrang = value; }
+        public DateTime Born { get => born; set => born = value; }
+        public DateTime DateTime { get => dateTime; set => dateTime = value; }
 
     }
 }
