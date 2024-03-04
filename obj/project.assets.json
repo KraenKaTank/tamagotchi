@@ -8,26 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\p.breuer\\.nuget\\packages\\": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\p.breuer\\Documents\\Berufsschule\\STD\\Legler\\Tamagotchi\\Tamagotchi2.csproj",
+      "projectUniqueName": "/mnt/e/Workspaces/Tamagotchi/Tamagotchi2.csproj",
       "projectName": "Tamagotchi2",
-      "projectPath": "C:\\Users\\p.breuer\\Documents\\Berufsschule\\STD\\Legler\\Tamagotchi\\Tamagotchi2.csproj",
-      "packagesPath": "C:\\Users\\p.breuer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\p.breuer\\Documents\\Berufsschule\\STD\\Legler\\Tamagotchi\\obj\\",
+      "projectPath": "/mnt/e/Workspaces/Tamagotchi/Tamagotchi2.csproj",
+      "packagesPath": "/root/.nuget/packages/",
+      "outputPath": "/mnt/e/Workspaces/Tamagotchi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\p.breuer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -40,11 +38,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -66,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

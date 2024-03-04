@@ -19,12 +19,24 @@ namespace Tamagotchi
         private int social;
         private int harndrang;
         private bool awake;
-        private bool alive;
+        private bool alive = true;
         private bool sick;
         private bool hatched;
         private Random random = new Random();
 
-
+        public string Name { get => name; set => name = value; }
+        public int Hunger { get => hunger; set => hunger = value; }
+        public int Sleepy { get => sleepy; set => sleepy = value; }
+        public int Bored { get => bored; set => bored = value; }
+        public double Age { get => age; set => age = value; }
+        public int Health { get => health; set => health = value; }
+        public int Hygiene { get => hygiene; set => hygiene = value; }
+        public int Social { get => social; set => social = value; }
+        public int Harndrang { get => harndrang; set => harndrang = value; }
+        public bool Awake { get => awake; set => awake = value; }
+        public bool Alive { get => alive; set => alive = value; }
+        public bool Sick { get => sick; set => sick = value; }
+        public bool Hatched { get => hatched; set => hatched = value; }
 
         public Pet(string name)
         {
@@ -71,7 +83,9 @@ namespace Tamagotchi
 
         public void SimulateTime(){
             
-                Thread.Sleep(6000);
+                while(true){  
+                    
+                Thread.Sleep(6000);   
                 age += 0.10;
                 hunger -= 1;
                 hygiene -= 1;
@@ -85,16 +99,10 @@ namespace Tamagotchi
                 if(awake){
                 sleepy -= 1;
                 }
+
+                }
         }
         
-        public string Name { get => name; set => name = value; }
-        public int Hunger { get => hunger; set => hunger = value; }
-        public int Sleepy { get => sleepy; set => sleepy = value; }
-        public int Bored { get => bored; set => bored = value; }
-        public int Health { get => health; set => health = value; }
-        public int Hygiene { get => hygiene; set => hygiene = value; }
-        public int Social { get => social; set => social = value; }
-        public int Harndrang { get => harndrang; set => harndrang = value; }
 
     }
 }

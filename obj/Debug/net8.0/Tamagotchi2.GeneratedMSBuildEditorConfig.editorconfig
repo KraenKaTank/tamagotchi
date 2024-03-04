@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Tamagotchi2
-build_property.ProjectDir = C:\Users\p.breuer\Documents\Berufsschule\STD\Legler\Tamagotchi\
+build_property.ProjectDir = /mnt/e/Workspaces/Tamagotchi/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

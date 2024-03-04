@@ -3,7 +3,6 @@
 class LinuxPet : PetModel{
 
 public override void TamagotchiEgg(){
-  Console.Clear();
    System.Console.WriteLine(@"
    
             .-~-.  
