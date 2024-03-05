@@ -20,7 +20,7 @@ namespace Tamagotchi
         private int harndrang;
         private bool awake;
         private bool alive = true;
-        private bool sick;
+        private bool sick = false;
         private bool hatched;
         private Random random = new Random();
 
@@ -49,6 +49,19 @@ namespace Tamagotchi
             hygiene = 70;
             social = 70;
             harndrang = 30;
+        }
+
+        public void ShowStats(){
+            
+            System.Console.Write("Name: [" + Name);
+            System.Console.Write("]  Alter: [" + Math.Round(Age, 1));
+            System.Console.Write("]  Hunger: [" + Hunger);
+            System.Console.Write("]  Schlaf: [" + Sleepy);
+            System.Console.Write("]  Unterhaltung: [" + Bored);
+            System.Console.Write("]  Gesundheit: [" + Health);
+            System.Console.Write("]  Hygiene: [" + hygiene);
+            System.Console.Write("]  Harndrang: [" + Harndrang);
+            System.Console.WriteLine("]  Krank: [" + Sick + "]");
         }
 
         public void Sleep()
