@@ -2,7 +2,7 @@
 
 using Tamagotchi;
 
-class LinuxPet
+class LinuxPet : PetModel
 {
 
   GUI gui = new GUI();
@@ -86,14 +86,14 @@ class LinuxPet
                          @,----.JM|
                         JS^\__/  qKL
                       dZP        qKRb
-                      dZP          qKKb
+                     dZP          qKKb
                     fZP            SMMb
                     HZM            MMMM
                     FqM            MMMM
-                  __| '.        |\dS'qML
-                  |    `.       | `' \Zq
-                  _)      \.___.,|     .'
-                  \____   )MMMMMP|   .'
+                 __| '.         |\dS'qML
+                 |    `.        | `' \Zq
+                _)      \.___., |     .'
+                 \____   )MMMMMP|   .'
                       `-'       `--'
                       ");
       }
@@ -105,7 +105,3 @@ class LinuxPet
     }
   }
 }
-
-
-
-

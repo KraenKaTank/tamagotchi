@@ -2,12 +2,13 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Tamagotchi
 {
-    internal class Pet
+    public class Pet
     {
         private string name;
         private int hunger;
@@ -18,8 +19,8 @@ namespace Tamagotchi
         private int hygiene;
         private int social;
         private int harndrang;
-        private bool awake= true;
-        private bool alive = true;
+        private bool awake = true;
+        private bool alive;
         private bool sick = false;
         private bool hatched;
         private Random random = new Random();
@@ -38,9 +39,10 @@ namespace Tamagotchi
         public bool Sick { get => sick; set => sick = value; }
         public bool Hatched { get => hatched; set => hatched = value; }
 
-        public Pet(string name)
+        public Pet(string nameV)
         {
-            this.name = name;
+            name = nameV;
+            alive = true;
             hunger = 70;
             sleepy = 70;
             bored = 70;
@@ -50,9 +52,24 @@ namespace Tamagotchi
             social = 70;
             harndrang = 30;
         }
+        public Pet CreatePet(){
+            System.Console.WriteLine("Wie soll dein Tamagotchi heißen?");
+            string nameOfNew = Console.ReadLine();
+            return new Pet(nameOfNew); 
 
-        public void ShowStats(){
-            
+        }
+
+        public void SetStat(int value, ref int stat){
+            if(stat + value < 0){
+                stat = 0;
+            }else{
+                stat += value;
+            }
+        }
+
+        public void ShowStats()
+        {
+
             System.Console.Write("Name: [" + Name);
             System.Console.Write("]  Alter: [" + Math.Round(Age, 1));
             System.Console.Write("]  Hunger: [" + Hunger);
@@ -67,100 +84,119 @@ namespace Tamagotchi
         public void Sleep()
         {
             Random random = new Random();
-            if( random.Next(10) < 3)
+            if (random.Next(10) < 3)
             {
-                sleepy += 10;
-                Console.WriteLine(name +" hat nicht gut geschlafen");
+                SetStat(10,ref sleepy);
+                Console.WriteLine(name + " hat nicht gut geschlafen");
             }
             Console.WriteLine("z Z");
             sleepy = 100;
         }
         public void Feed()
         {
-            if( random.Next(10) < 1)
+            if (random.Next(10) < 1)
             {
-                hunger -= 10;
+                SetStat(-10, ref hunger);
                 sick = true;
                 Console.WriteLine("Food was spoiled");
             }
-            hunger += 30;
+            SetStat(30, ref hunger);
 
         }
         public void Play()
         {
-            if(age > 5)
+            if (age > 5)
             {
-                bored += 15;
+                SetStat(15,ref bored);
             }
-            bored += 30;
+            SetStat(30, ref bored);
+        }
+        public void Dead(string name, string dead)
+        {
+
+            alive = false;
+            Console.Clear();
+            Console.WriteLine(name + " ist gestorben wegen " + dead);
+            // Environment.Exit(0);
+
+
         }
 
-        public void SimulateTime(){
-            
-                while(alive){  
-                    
-                Thread.Sleep(6000);   
-                age += 0.10;
-                hunger -= 1;
-                hygiene -= 1;
-                harndrang += 1;
-                bored -= 1;
 
-                if(hygiene < 20){
-                    if(random.Next(10) < 3){
-                        sick = true;
-                    }
+        public void SimulateTime()
+        {
+
+            while (alive)
+            {
+                 if (awake)
+                {
+                Thread.Sleep(1000);
+                age += 0.05;
+                SetStat(-3, ref hunger);
+                SetStat(-3, ref hygiene);
+                SetStat(3,ref harndrang);
+                SetStat(-3, ref bored);
+                SetStat(-1, ref sleepy);
                 }
 
-                if(awake){
-                sleepy -= 1;
-                }
-
-                }
+            }
         }
-        public void CheckStats(){
-            if(alive){
+        public void CheckStats()
+        {
 
-            
-            if(sick){
-                System.Console.WriteLine(name +" ist Krank!");
-                health -= 5;
-                if(random.Next(10) < 1){
-                    alive = false;
-                    System.Console.WriteLine(name +" ist gestorben!");
+            if(hygiene < 20 && alive  ){
+                if(random.Next(20) < 1){
+                    sick = true;
+                }
+                
+            }
+            if (sick && alive)
+            {
+                System.Console.WriteLine(name + " ist Krank!");
+                SetStat(-5, ref health);
+                if (random.Next(10) < 1)
+                {
+                    Dead(name, "Krankheit");
                 }
             }
-            if(hunger < 30){
-                System.Console.WriteLine(name +" hat Hunger!");
-                if(hunger == 0){
-                    System.Console.WriteLine(name +" ist am verhungern!");
-                    health -= 5;
-                    if(random.Next(10) < 1){
-                        System.Console.WriteLine(name +" ist verhungert!");
-                        alive = false;
+            if (hunger < 30 && alive)
+            {
+                System.Console.WriteLine(name + " hat Hunger!");
+                if (hunger == 0)
+                {
+                    System.Console.WriteLine(name + " ist am verhungern!");
+                    SetStat(-5, ref health);
+                    if (random.Next(10) < 1)
+                    {
+                        Dead(name, "Hunger");
                     }
                 }
             }
-            if(sleepy < 20 ){
-                System.Console.WriteLine("Du bist müde!");
-                if(sleepy <= 0){
+            if (sleepy < 20 && alive)
+            {
+                System.Console.WriteLine(name +" ist müde!");
+                if (sleepy <= 0)
+                {
                     Sleep();
-                    System.Console.WriteLine(name +" ist eingeschlafen!");
+                    System.Console.WriteLine(name + " ist eingeschlafen!");
                 }
             }
-            if(harndrang > 80){
-                System.Console.WriteLine(name +" muss auf Toilette!");
-                if(harndrang > 99){
-                    System.Console.WriteLine(name +" hat sich eingepinkelt!");
-                    harndrang -= 70;
-                    hygiene -= 50;
+            if (harndrang > 80 && alive)
+            {
+                System.Console.WriteLine(name + " muss auf Toilette!");
+                if (harndrang > 99)
+                {
+                    System.Console.WriteLine(name + " hat sich eingepinkelt!");
+                    SetStat(-70, ref harndrang);
+                    SetStat(-50, ref hygiene);
                 }
 
             }
-            if(bored < 30){
-                System.Console.WriteLine(name +" ist gelangweilt!");
+            if (bored < 30 && alive)
+            {
+                System.Console.WriteLine(name + " ist gelangweilt!");
             }
-        }
+
         }
 
     }
