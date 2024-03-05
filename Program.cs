@@ -12,5 +12,14 @@ Thread visual = new Thread(new ParameterizedThreadStart(linuxPet.LinuxTamagotchi
 visual.Start(pet);
 
 while(pet.Alive){
+    ConsoleKeyInfo keyInfo =  Console.Readkey();
     
+    switch (keyInfo)
+    {
+        
+        default:
+        break;
+    }
+
+
 }

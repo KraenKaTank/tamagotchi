@@ -18,7 +18,7 @@ namespace Tamagotchi
         private int hygiene;
         private int social;
         private int harndrang;
-        private bool awake;
+        private bool awake= true;
         private bool alive = true;
         private bool sick = false;
         private bool hatched;
@@ -70,16 +70,17 @@ namespace Tamagotchi
             if( random.Next(10) < 3)
             {
                 sleepy += 10;
-                Console.WriteLine("Didn't sleep well");
+                Console.WriteLine(name +" hat nicht gut geschlafen");
             }
             Console.WriteLine("z Z");
             sleepy = 100;
         }
         public void Feed()
         {
-            if( random.Next(10) < 2)
+            if( random.Next(10) < 1)
             {
                 hunger -= 10;
+                sick = true;
                 Console.WriteLine("Food was spoiled");
             }
             hunger += 30;
@@ -96,12 +97,14 @@ namespace Tamagotchi
 
         public void SimulateTime(){
             
-                while(true){  
+                while(alive){  
                     
                 Thread.Sleep(6000);   
                 age += 0.10;
                 hunger -= 1;
                 hygiene -= 1;
+                harndrang += 1;
+                bored -= 1;
 
                 if(hygiene < 20){
                     if(random.Next(10) < 3){
@@ -115,7 +118,50 @@ namespace Tamagotchi
 
                 }
         }
-        
+        public void CheckStats(){
+            if(alive){
+
+            
+            if(sick){
+                System.Console.WriteLine(name +" ist Krank!");
+                health -= 5;
+                if(random.Next(10) < 1){
+                    alive = false;
+                    System.Console.WriteLine(name +" ist gestorben!");
+                }
+            }
+            if(hunger < 30){
+                System.Console.WriteLine(name +" hat Hunger!");
+                if(hunger == 0){
+                    System.Console.WriteLine(name +" ist am verhungern!");
+                    health -= 5;
+                    if(random.Next(10) < 1){
+                        System.Console.WriteLine(name +" ist verhungert!");
+                        alive = false;
+                    }
+                }
+            }
+            if(sleepy < 20 ){
+                System.Console.WriteLine("Du bist müde!");
+                if(sleepy <= 0){
+                    Sleep();
+                    System.Console.WriteLine(name +" ist eingeschlafen!");
+                }
+            }
+            if(harndrang > 80){
+                System.Console.WriteLine(name +" muss auf Toilette!");
+                if(harndrang > 99){
+                    System.Console.WriteLine(name +" hat sich eingepinkelt!");
+                    harndrang -= 70;
+                    hygiene -= 50;
+                }
+
+            }
+            if(bored < 30){
+                System.Console.WriteLine(name +" ist gelangweilt!");
+            }
+        }
+        }
 
     }
 }

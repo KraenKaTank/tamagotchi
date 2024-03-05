@@ -11,8 +11,7 @@ class LinuxPet
   {
     Pet pet = (Pet)obj;
 
-    while (pet.Alive)
-    {
+    while(pet.Alive){
       Thread.Sleep(1000);
 
       if (pet.Age <= 0.5)
