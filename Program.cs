@@ -9,6 +9,10 @@ LinuxPet petModel = new LinuxPet();
 string petName;
 int petType;
 int control;
+GUI gui = new GUI();
+
+
+gui.IntroStart();
 
 System.Console.WriteLine("Herzlich Willkommen zu Tamagotchi!");
 System.Console.WriteLine("Wie soll dein Tamagotchi heißen?");
@@ -29,6 +33,7 @@ time.Start();
 
 Thread visual = new Thread(new ParameterizedThreadStart(petModel.LinuxTamagotchi));
 visual.Start(pet);
+
 
 
 while(wantToPlay){

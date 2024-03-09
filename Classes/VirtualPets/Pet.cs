@@ -90,9 +90,16 @@ namespace Tamagotchi
             {
                 SetStat(10, ref sleepy);
                 Console.WriteLine(name + " hat nicht gut geschlafen");
+                Thread.Sleep(20000);
             }
-            Console.WriteLine("z Z");
-            sleepy = 100;
+            else
+            {
+
+                Console.WriteLine("z Z");
+                sleepy = 100;
+                Thread.Sleep(20000);
+
+            }
         }
         public void Feed()
         {
@@ -145,7 +152,7 @@ namespace Tamagotchi
             {
                 if (awake)
                 {
-                    Thread.Sleep(1000);
+                    Thread.Sleep(4000);
                     age += 0.05;
                     SetStat(-3, ref hunger);
                     SetStat(-3, ref hygiene);
