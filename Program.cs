@@ -59,15 +59,15 @@ if(int.TryParse(Console.ReadKey().KeyChar.ToString(), out control)){
         break;
         
         case 4:
-        // pet.Medicate();
+        pet.Medicate();
         break;
 
         case 5:
-        // pet.Shower();
+        pet.Shower();
         break;
 
         case 6:
-        // pet.UseToilette();
+        pet.UseToilette();
         break;
         
         default:

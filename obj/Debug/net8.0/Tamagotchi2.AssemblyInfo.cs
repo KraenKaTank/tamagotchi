@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tamagotchi2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8739e749f16bbbd66ac636b9e7fbc6dbe3277379")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a6994eec7c58855dd1a89a3255755e0691f03aff")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tamagotchi2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tamagotchi2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
