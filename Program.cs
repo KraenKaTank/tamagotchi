@@ -74,6 +74,10 @@ if(int.TryParse(Console.ReadKey().KeyChar.ToString(), out control)){
         case 6:
         pet.UseToilette();
         break;
+
+        case 7:
+        pet.WakeUp();
+        break;
         
         default:
         break;

@@ -22,7 +22,6 @@ namespace Tamagotchi
         private bool awake = true;
         private bool alive;
         private bool sick = false;
-        private bool hatched;
         private Random random = new Random();
 
         public string Name { get => name; set => name = value; }
@@ -37,7 +36,6 @@ namespace Tamagotchi
         public bool Awake { get => awake; set => awake = value; }
         public bool Alive { get => alive; set => alive = value; }
         public bool Sick { get => sick; set => sick = value; }
-        public bool Hatched { get => hatched; set => hatched = value; }
 
         public Pet(string nameV)
         {
@@ -85,31 +83,50 @@ namespace Tamagotchi
 
         public void Sleep()
         {
-            Random random = new Random();
+
+            awake = false;
+
+        }
+
+        public void WakeUp()
+        {
+
             if (random.Next(10) < 3)
             {
                 SetStat(10, ref sleepy);
                 Console.WriteLine(name + " hat nicht gut geschlafen");
-                Thread.Sleep(20000);
+                Thread.Sleep(6000);
             }
             else
             {
 
                 Console.WriteLine("z Z");
+                Thread.Sleep(6000);
                 sleepy = 100;
-                Thread.Sleep(20000);
 
             }
         }
+
         public void Feed()
         {
             if (random.Next(10) < 1)
             {
                 SetStat(-10, ref hunger);
                 sick = true;
+                Thread.Sleep(2000);
                 Console.WriteLine("Food was spoiled");
             }
-            SetStat(30, ref hunger);
+            if (30 + hunger > 100)
+            {
+                System.Console.WriteLine(name + " hat sich übergeben!");
+                SetStat(-20, ref hunger);
+                Thread.Sleep(2000);
+            }
+            else
+            {
+                SetStat(30, ref hunger);
+            }
+
 
         }
         public void Play()
@@ -152,13 +169,16 @@ namespace Tamagotchi
             {
                 if (awake)
                 {
-                    Thread.Sleep(4000);
+                    Thread.Sleep(6000);
                     age += 0.05;
-                    SetStat(-3, ref hunger);
-                    SetStat(-3, ref hygiene);
-                    SetStat(3, ref harndrang);
-                    SetStat(-3, ref bored);
-                    SetStat(-1, ref sleepy);
+                    if (age >= 0.5)
+                    {
+                        SetStat(-3, ref hunger);
+                        SetStat(-3, ref hygiene);
+                        SetStat(3, ref harndrang);
+                        SetStat(-3, ref bored);
+                        SetStat(-3, ref sleepy);
+                    }
                 }
 
             }
@@ -211,6 +231,7 @@ namespace Tamagotchi
                 if (harndrang > 99)
                 {
                     System.Console.WriteLine(name + " hat sich eingepinkelt!");
+                    Thread.Sleep(6000);
                     SetStat(-70, ref harndrang);
                     SetStat(-50, ref hygiene);
                 }
@@ -222,7 +243,7 @@ namespace Tamagotchi
             }
             if (hygiene < 30 && alive)
             {
-                System.Console.WriteLine();
+                System.Console.WriteLine(name + " ist ungepflegt!");
             }
 
         }
