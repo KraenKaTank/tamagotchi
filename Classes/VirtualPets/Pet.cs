@@ -22,6 +22,7 @@ namespace Tamagotchi
         private bool awake = true;
         private bool alive;
         private bool sick = false;
+        private bool hardMode = false;
         private Random random = new Random();
 
         public string Name { get => name; set => name = value; }
@@ -36,6 +37,7 @@ namespace Tamagotchi
         public bool Awake { get => awake; set => awake = value; }
         public bool Alive { get => alive; set => alive = value; }
         public bool Sick { get => sick; set => sick = value; }
+        public bool HardMode { get => hardMode; set => hardMode = value; }
 
         public Pet(string nameV)
         {
@@ -49,6 +51,13 @@ namespace Tamagotchi
             hygiene = 70;
             social = 70;
             harndrang = 30;
+        }
+
+        public void HardModeGame(){
+            System.Console.WriteLine("Willst du im Hardmode spielen? y/any");
+            if(Console.ReadLine() == "y"){    
+                hardMode = true;
+            }
         }
 
         public void SetStat(int value, ref int stat)
@@ -105,6 +114,7 @@ namespace Tamagotchi
                 sleepy = 100;
 
             }
+            awake = true;
         }
 
         public void Feed()
@@ -135,7 +145,10 @@ namespace Tamagotchi
             {
                 SetStat(15, ref bored);
             }
-            SetStat(30, ref bored);
+            else
+            {
+                SetStat(30, ref bored);
+            }
         }
         public void Medicate()
         {
@@ -156,7 +169,6 @@ namespace Tamagotchi
             alive = false;
             Console.Clear();
             Console.WriteLine(name + " ist gestorben wegen " + dead);
-            // Environment.Exit(0);
 
 
         }
@@ -169,16 +181,34 @@ namespace Tamagotchi
             {
                 if (awake)
                 {
-                    Thread.Sleep(6000);
-                    age += 0.05;
-                    if (age >= 0.5)
+                    if (hardMode)
                     {
-                        SetStat(-3, ref hunger);
-                        SetStat(-3, ref hygiene);
-                        SetStat(3, ref harndrang);
-                        SetStat(-3, ref bored);
-                        SetStat(-3, ref sleepy);
+                        Thread.Sleep(1000);
+                        age += 0.1;
+                        if (age >= 0.5)
+                        {
+                            SetStat(-5, ref hunger);
+                            SetStat(-8, ref hygiene);
+                            SetStat(4, ref harndrang);
+                            SetStat(-8, ref bored);
+                            SetStat(-5, ref sleepy);
+                        }
                     }
+                    else
+                    {
+                        Thread.Sleep(6000);
+                        age += 0.05;
+                        if (age >= 0.5)
+                        {
+                            SetStat(-3, ref hunger);
+                            SetStat(-3, ref hygiene);
+                            SetStat(3, ref harndrang);
+                            SetStat(-3, ref bored);
+                            SetStat(-3, ref sleepy);
+                        }
+
+                    }
+
                 }
 
             }

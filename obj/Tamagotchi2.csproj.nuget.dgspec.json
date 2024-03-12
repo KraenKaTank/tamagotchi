@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/e/Workspaces/Tamagotchi/Tamagotchi2.csproj": {}
+    "C:\\Users\\p.breuer\\Documents\\Berufsschule\\STD\\Legler\\Tamagotchi\\Tamagotchi2.csproj": {}
   },
   "projects": {
-    "/mnt/e/Workspaces/Tamagotchi/Tamagotchi2.csproj": {
+    "C:\\Users\\p.breuer\\Documents\\Berufsschule\\STD\\Legler\\Tamagotchi\\Tamagotchi2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/e/Workspaces/Tamagotchi/Tamagotchi2.csproj",
+        "projectUniqueName": "C:\\Users\\p.breuer\\Documents\\Berufsschule\\STD\\Legler\\Tamagotchi\\Tamagotchi2.csproj",
         "projectName": "Tamagotchi2",
-        "projectPath": "/mnt/e/Workspaces/Tamagotchi/Tamagotchi2.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/mnt/e/Workspaces/Tamagotchi/obj/",
+        "projectPath": "C:\\Users\\p.breuer\\Documents\\Berufsschule\\STD\\Legler\\Tamagotchi\\Tamagotchi2.csproj",
+        "packagesPath": "C:\\Users\\p.breuer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\p.breuer\\Documents\\Berufsschule\\STD\\Legler\\Tamagotchi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\p.breuer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
