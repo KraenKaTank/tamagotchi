@@ -2,12 +2,12 @@
 
 using Tamagotchi;
 
-class LinuxPet : PetModel
+class LinuxPet :PetModel
 {
 
   GUI gui = new GUI();
 
-  public void LinuxTamagotchi(object obj)
+  public override void Tamagotchi(object obj)
   {
     Pet pet = (Pet)obj;
 

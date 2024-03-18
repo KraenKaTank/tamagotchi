@@ -1,17 +1,8 @@
 
+using System.Reflection;
 using System.Xml.Schema;
 
-class PetModel{
+abstract class PetModel{
 
-    public PetModel() {
-
-    }
-
-    public PetModel(int value){
-        if(value == 1){
-            new LinuxPet();
-        }
-    }
-
-    
+abstract public void Tamagotchi(object obj);
 }

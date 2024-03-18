@@ -41,7 +41,7 @@ if (Console.ReadLine() == "y")
 Thread time = new Thread(pet.SimulateTime);
 time.Start();
 
-Thread visual = new Thread(new ParameterizedThreadStart(petModel.LinuxTamagotchi));
+Thread visual = new Thread(new ParameterizedThreadStart(petModel.Tamagotchi));
 visual.Start(pet);
 
 
@@ -62,7 +62,7 @@ while (wantToPlay)
             System.Console.WriteLine("Wie soll dein Tamagotchi heißen?");
             pet = new Pet(Console.ReadLine());
             time = new Thread(pet.SimulateTime);
-            visual = new Thread(new ParameterizedThreadStart(petModel.LinuxTamagotchi));
+            visual = new Thread(new ParameterizedThreadStart(petModel.Tamagotchi));
             time.Start();
             visual.Start(pet);
 
