@@ -10,9 +10,13 @@ string petName;
 int petType;
 int control;
 GUI gui = new GUI();
+Database db = new Database();
+
+
 
 
 gui.IntroStart();
+
 
 System.Console.WriteLine("Herzlich Willkommen zu Tamagotchi!");
 System.Console.WriteLine("Wie soll dein Tamagotchi heißen?");
