@@ -10,7 +10,8 @@ string petName;
 int petType;
 int control;
 GUI gui = new GUI();
-Database db = new Database();
+DatabaseService db = new DatabaseService();
+API apiMysql = new API();
 
 
 
@@ -19,8 +20,20 @@ gui.IntroStart();
 
 
 System.Console.WriteLine("Herzlich Willkommen zu Tamagotchi!");
-System.Console.WriteLine("Wie soll dein Tamagotchi heißen?");
-petName = Console.ReadLine();
+System.Console.WriteLine("Möchtest bestehende Pet sehen? y = yes / any = n");
+if(Console.ReadLine() == "y"){
+    apiMysql.ReadPetData();
+    System.Console.WriteLine("Möchtest du ein Pet auswählen? y = yes / any = n");
+    if(Console.ReadLine() == "y"){
+        System.Console.WriteLine("Welches Pet möchtest du wählen? Wähle eine Zahl");
+        apiMysql.GetPet();
+    }
+
+}
+pet= new Pet(Console.ReadLine());
+apiMysql.CreatePetData(pet.Name, pet.Age, pet.Alive, pet.Hunger, pet.Sleepy, pet.Bored, pet.Health, pet.Hygiene, pet.Social, pet.Harndrang);
+
+
 
 
 
@@ -32,7 +45,7 @@ petName = Console.ReadLine();
 // }
 
 
-pet = new Pet(petName);
+
 
 System.Console.WriteLine("Willst du im Hardmode spielen? y/n");
 
