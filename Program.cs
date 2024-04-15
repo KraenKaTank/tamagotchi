@@ -78,6 +78,13 @@ while (wantToPlay)
         {
             System.Console.WriteLine("Wie soll dein Tamagotchi heißen?");
             pet = new Pet(Console.ReadLine());
+
+            System.Console.WriteLine("Willst du im Hardmode spielen? y/n");
+            if (Console.ReadLine() == "y")
+            {
+                pet.HardMode = true;
+            }
+            
             time = new Thread(pet.SimulateTime);
             visual = new Thread(new ParameterizedThreadStart(petModel.Tamagotchi));
             time.Start();
